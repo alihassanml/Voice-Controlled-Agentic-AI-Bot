@@ -10,4 +10,4 @@ sounddevice
 numpy
 langchain-groq
 langchain-community
-TTS
+playsound
