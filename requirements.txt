@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+openai-whisper
+pyttsx3
+langchain
+requests
+wikipedia
