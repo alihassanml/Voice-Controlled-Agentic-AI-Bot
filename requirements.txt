@@ -8,3 +8,6 @@ wikipedia
 pipwin
 sounddevice
 numpy
+langchain-groq
+langchain-community
+TTS

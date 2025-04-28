@@ -1,0 +1,1 @@
+tts_engine.setProperty('rate', 110)
