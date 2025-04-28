@@ -5,3 +5,6 @@ pyttsx3
 langchain
 requests
 wikipedia
+pipwin
+sounddevice
+numpy
