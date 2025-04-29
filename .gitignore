@@ -3,3 +3,4 @@ env
 Documentation.docx
 Documentation.pdf
 piper
+__pycache__
