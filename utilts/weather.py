@@ -1,6 +1,5 @@
 import requests
 
-
 def index(request):
     city = "lahore"
     url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid=aff584d9aedae231ab24591531c1e091'
