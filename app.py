@@ -8,7 +8,7 @@ import subprocess
 import playsound
 
 # === MODEL CONFIG ===
-model = "gemma3:1b"  # or "deepseek-coder:6.7b" etc.
+model = "llama3.2:1b"  # or "deepseek-coder:6.7b" etc.
 
 # === SETUP ===
 recognizer = sr.Recognizer()
@@ -19,10 +19,17 @@ context = None  # For preserving chat history
 
 # === TEMPLATE ===
 TEMPLATE = """
-You are a concise and accurate AI assistant.
-- Answer with a maximum of 3 sentences.
-- Do not over-explain.
-- Use clear and factual language.
+You are a smart and thoughtful assistant trained by Ali Hassan.
+-If the user greets (e.g., says "hi", "hello"), reply with a short friendly greeting (e.g., "Hi there!").
+- Otherwise, directly answer their question.
+- Answer in 1–3 short, clear sentences — like a human would.
+- Focus only on what the user asks. Do not explain your role or add extra info.
+- Always be concise, helpful, and conceptually accurate.
+- Provide short, direct, and conceptually rich answers.
+- Focus only on what the user asks — no extra info.
+- Never mention you are an AI or describe your capabilities.
+- Keep responses under 3 clear sentences.
+- Prioritize depth of thought and usefulness in minimal words.
 
 User Question: {query}
 """
@@ -102,8 +109,8 @@ def listen():
                 print(f"⚠ Error: {e}")
                 stop_speech_event.clear()
 
-            if time.time() - last_speech_time > 10:
-                print("⏸️ No speech detected for 10 seconds. Stopping...")
+            if time.time() - last_speech_time > 30:
+                print("⏸️ No speech detected for 30 seconds. Stopping...")
                 listening_active = False
                 break
 
